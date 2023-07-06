@@ -6,8 +6,6 @@ WORKDIR /source
 COPY package*.json ./
 # Run ci only for the production dependencies
 RUN npm i --force
-#audit fix
-RUN npm audit fix --force
 # Copy the rest of the files into the container and build
 COPY . .
 RUN npm run build --prod
