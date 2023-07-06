@@ -5,7 +5,7 @@ WORKDIR /source
 # Copy the package lock file into the container
 COPY package*.json ./
 # Run ci only for the production dependencies
-RUN npm i
+RUN npm i --force
 
 # Copy the rest of the files into the container and build
 COPY . .
