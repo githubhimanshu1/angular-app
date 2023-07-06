@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm i --force
 # Copy the rest of the files into the container and build
 COPY . .
-RUN npm run build --prod
+RUN npm run build
 
 FROM nginx:alpine
 COPY --from=build /source/dist/todo /usr/share/nginx/html
